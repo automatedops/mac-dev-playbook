@@ -3,3 +3,15 @@
 - name: Run .osx dotfiles.
   shell: "{{ osx_script }}"
   changed_when: false
+
+# Change MacOS screenshot location
+# from ~/Desktop to ~/Picture/screenshots
+# when configure_osx_screenshot is set to yes
+- name: Create screenshot location
+  file:
+    path: "{{ osx_screenshot_location }}"
+    state: directory
+  when: configure_osx_screenshot
+- name: Set screenshot location
+  command: "defaults write com.apple.screencapture location {{ osx_screenshot_location }}"
+  when: configure_osx_screenshot

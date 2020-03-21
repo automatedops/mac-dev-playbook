@@ -3,21 +3,22 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
 configure_sudoers: yes
-configure_terminal: yes
+configure_terminal: no
 configure_osx: yes
+
+configure_osx_screenshot: yes
+osx_screenshot_location: ~/Pictures/screenshots
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
-  - .zshrc
   - .gitignore
   - .inputrc
   - .osx
   - .vimrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
   - doxygen
@@ -29,20 +30,21 @@ homebrew_installed_packages:
   - gpg
   - httpie
   - iperf
-  - libevent
-  - sqlite
   - mcrypt
   - nmap
-  - node
-  - nvm
-  - php
   - ssh-copy-id
-  - cowsay
   - readline
   - openssl
-  - pv
   - wget
   - wrk
+  - awscli
+  - kubernetes-cli
+  - kops
+  - jq
+  - kafkacat
+  - pyenv
+  - htop
+  - watch
 
 homebrew_taps:
   - homebrew/core
@@ -50,20 +52,23 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
+  - 1password
   - docker
-  - dropbox
   - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - macvim
-  - sequel-pro
-  - skitch
   - slack
-  - sublime-text
-  - transmit
-  - vagrant
+  - atom
+  - oracle-jdk
+  - intellij-idea
+  # - intellij-idea-ce
+  # - google-chrome
+  - cloudapp
+  - postman
+  - zoomus
+  # - virtualbox
+  # - virtualbox-extension-pack
+  - flycut # Paste history
+  - spectacle # Window manager
+  - wechat # Wechat
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
